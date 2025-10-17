@@ -1,6 +1,6 @@
 {
   "name": "create-frontend-app",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A secure and modular CLI tool to create frontend projects with modern best practices",
   "main": "index.js",
   "bin": {
