@@ -20,13 +20,41 @@ A powerful, secure, and modular CLI tool that generates modern frontend projects
 **Global Installation (Recommended)**
 
 ```bash
-npm install -g create-frontend-app
+# Install globally
+npm install -g @ashutoshdash/create-frontend-app
+
+# Verify installation
+create-frontend-app --version
 ```
 
-**One-time Usage**
+**One-time Usage (without global installation)**
 
 ```bash
-npx create-frontend-app my-awesome-app
+# Using npx (downloads and runs without installing)
+npx @ashutoshdash/create-frontend-app my-awesome-app
+
+# Using npm create (alternative)
+npm create frontend-app my-awesome-app
+```
+
+### Cross-Platform Usage
+
+**Windows (PowerShell/CMD)**
+```bash
+# After global installation
+create-frontend-app my-project
+
+# Or with npx
+npx @ashutoshdash/create-frontend-app my-project
+```
+
+**macOS/Linux (Terminal)**
+```bash
+# After global installation
+create-frontend-app my-project
+
+# Or with npx
+npx @ashutoshdash/create-frontend-app my-project
 ```
 
 ### Basic Usage
@@ -38,8 +66,14 @@ create-frontend-app my-project
 # Or specify a directory
 create-frontend-app ./my-new-app
 
-# Get help
+# Get help and see all options
 create-frontend-app --help
+
+# Quick Next.js + Mantine setup
+create-frontend-app --next-mantine --name my-nextjs-app
+
+# Specify package manager
+create-frontend-app --next-mantine --name my-app --package-manager yarn
 ```
 
 ## 📋 Interactive Setup
@@ -317,11 +351,54 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🧪 **Testing Ready**: Built-in testing infrastructure with Jest
 - 🚀 **Production Ready**: Optimized builds and deployment configurations
 
+## 🔧 Troubleshooting
+
+### Common Issues
+
+**"Command not found" on Windows**
+```bash
+# Make sure npm global bin is in your PATH
+npm config get prefix
+# Add the output to your PATH environment variable
+# Or use npx instead
+npx @ashutoshdash/create-frontend-app my-project
+```
+
+**Permission denied on macOS/Linux**
+```bash
+# Fix npm permissions
+sudo chown -R $(whoami) ~/.npm
+# Or use npx
+npx @ashutoshdash/create-frontend-app my-project
+```
+
+**Node.js version issues**
+```bash
+# Check your Node.js version
+node --version
+# Should be 14.0.0 or higher
+# Update if needed: https://nodejs.org/
+```
+
+**Package manager not found**
+```bash
+# Make sure your chosen package manager is installed
+npm --version
+yarn --version  # if using yarn
+pnpm --version  # if using pnpm
+```
+
+### Platform-Specific Notes
+
+- **Windows**: Use PowerShell or Command Prompt. Git Bash may have path issues.
+- **macOS**: May require `sudo` for global installation depending on Node.js setup.
+- **Linux**: Ensure you have build tools installed (`build-essential` on Ubuntu/Debian).
+
 ## 🆘 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/create-frontend-app/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/create-frontend-app/discussions)
-- **Documentation**: [Full Documentation](https://github.com/your-username/create-frontend-app#readme)
+- **Issues**: [GitHub Issues](https://github.com/ashutoshdash/create-frontend-app/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ashutoshdash/create-frontend-app/discussions)
+- **Documentation**: [Full Documentation](https://github.com/ashutoshdash/create-frontend-app#readme)
 
 ## 🙏 Acknowledgments
 
