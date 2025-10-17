@@ -4,8 +4,8 @@
   "description": "A secure and modular CLI tool to create frontend projects with modern best practices",
   "main": "index.js",
   "bin": {
-    "create-frontend-app": "index.js",
-    "@ashutoshdash/create-frontend-app": "index.js"
+    "create-frontend-app": "./index.js",
+    "@ashutoshdash/create-frontend-app": "./index.js"
   },
   "scripts": {
     "start": "node index.js",
@@ -52,7 +52,6 @@
   "dependencies": {
     "inquirer": "^9.2.12",
     "chalk": "^5.3.0",
-    "figlet": "^1.6.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
