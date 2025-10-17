@@ -4,7 +4,7 @@
   "description": "A secure and modular CLI tool to create frontend projects with modern best practices",
   "main": "index.js",
   "bin": {
-    "create-frontend-app": "./index.js"
+    "create-frontend-app": "index.js"
   },
   "scripts": {
     "start": "node index.js",
