@@ -14,6 +14,7 @@ Before publishing, ensure you have:
 ## 🔐 Authentication Setup
 
 ### 1. Create npm Account
+
 ```bash
 # Visit https://www.npmjs.com and create an account
 # Or use the command line
@@ -21,6 +22,7 @@ npm adduser
 ```
 
 ### 2. Login to npm
+
 ```bash
 # Login to npm registry
 npm login
@@ -30,6 +32,7 @@ npm whoami
 ```
 
 ### 3. Check Authentication
+
 ```bash
 # View your npm profile
 npm profile get
@@ -53,11 +56,7 @@ Check your `package.json` has all required fields:
   "bin": {
     "create-frontend-app": "index.js"
   },
-  "files": [
-    "index.js",
-    "src/",
-    "README.md"
-  ],
+  "files": ["index.js", "src/", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ashutoshdash1999/create-frontend-app.git"
@@ -246,7 +245,7 @@ function runCommand(command) {
 
 function publish() {
   console.log('🚀 Starting automated publish process...\n');
-  
+
   // 1. Check if logged in
   try {
     execSync('npm whoami', { stdio: 'pipe' });
@@ -254,22 +253,22 @@ function publish() {
     console.error('❌ Not logged in to npm. Run: npm login');
     process.exit(1);
   }
-  
+
   // 2. Run quality checks
   console.log('🔍 Running quality checks...');
   runCommand('npm run lint');
   runCommand('npm run format');
   runCommand('npm test');
-  
+
   // 3. Get current version
   const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
   const currentVersion = packageJson.version;
-  
+
   console.log(`📦 Publishing version ${currentVersion}...`);
-  
+
   // 4. Publish
   runCommand('npm publish');
-  
+
   console.log('✅ Successfully published to npm!');
   console.log(`🌐 View at: https://www.npmjs.com/package/@ashutoshdash/create-frontend-app`);
 }
@@ -292,6 +291,7 @@ Add to `package.json`:
 ### Common Issues and Solutions
 
 #### 1. Authentication Errors
+
 ```bash
 # Clear npm cache
 npm cache clean --force
@@ -302,6 +302,7 @@ npm login
 ```
 
 #### 2. Version Already Exists
+
 ```bash
 # Check current version
 npm view @ashutoshdash/create-frontend-app version
@@ -311,6 +312,7 @@ npm version patch
 ```
 
 #### 3. Permission Denied
+
 ```bash
 # Check package ownership
 npm owner ls @ashutoshdash/create-frontend-app
@@ -320,6 +322,7 @@ npm owner add ashutoshdash @ashutoshdash/create-frontend-app
 ```
 
 #### 4. Package Name Conflicts
+
 ```bash
 # Check if name is available
 npm view your-package-name
@@ -329,6 +332,7 @@ npm view your-package-name
 ```
 
 #### 5. Files Not Included
+
 ```bash
 # Check .npmignore file
 cat .npmignore
@@ -383,24 +387,28 @@ npm audit @ashutoshdash/create-frontend-app
 ## 🔄 Updating Published Package
 
 ### 1. Patch Update (Bug Fix)
+
 ```bash
 npm version patch
 npm publish
 ```
 
 ### 2. Minor Update (New Feature)
+
 ```bash
 npm version minor
 npm publish
 ```
 
 ### 3. Major Update (Breaking Change)
+
 ```bash
 npm version major
 npm publish
 ```
 
 ### 4. Deprecate Old Versions
+
 ```bash
 # Deprecate specific version
 npm deprecate @ashutoshdash/create-frontend-app@1.0.0 "Use v1.0.1 instead"
@@ -412,43 +420,48 @@ npm deprecate @ashutoshdash/create-frontend-app@"<1.0.0" "Use v1.0.0 or higher"
 ## 📚 Best Practices
 
 ### 1. Version Management
+
 - Use [Semantic Versioning](https://semver.org/)
 - Always update changelog before publishing
 - Tag releases in git
 
 ### 2. Quality Assurance
+
 - Run tests before every publish
 - Use pre-publish hooks
 - Maintain good test coverage
 
 ### 3. Documentation
+
 - Keep README.md updated
 - Document breaking changes
 - Provide migration guides
 
 ### 4. Security
+
 - Regular dependency updates
 - Security audits
 - Use `npm audit` regularly
 
 ### 5. Monitoring
+
 - Monitor download statistics
 - Track issues and feedback
 - Regular maintenance updates
 
 ## 🎯 Quick Reference
 
-| Command | Purpose |
-|---------|---------|
-| `npm login` | Login to npm |
-| `npm whoami` | Check login status |
-| `npm version patch` | Bump patch version |
-| `npm version minor` | Bump minor version |
-| `npm version major` | Bump major version |
-| `npm pack --dry-run` | Preview package contents |
-| `npm publish` | Publish to npm |
-| `npm view <package>` | View package info |
-| `npm unpublish <package>@<version>` | Unpublish version |
+| Command                             | Purpose                  |
+| ----------------------------------- | ------------------------ |
+| `npm login`                         | Login to npm             |
+| `npm whoami`                        | Check login status       |
+| `npm version patch`                 | Bump patch version       |
+| `npm version minor`                 | Bump minor version       |
+| `npm version major`                 | Bump major version       |
+| `npm pack --dry-run`                | Preview package contents |
+| `npm publish`                       | Publish to npm           |
+| `npm view <package>`                | View package info        |
+| `npm unpublish <package>@<version>` | Unpublish version        |
 
 ## 🆘 Getting Help
 

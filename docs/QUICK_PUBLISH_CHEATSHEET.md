@@ -10,6 +10,7 @@ npm run lint && npm run format && npm test && npm version patch && npm publish
 ## 📋 Essential Commands
 
 ### Authentication
+
 ```bash
 npm login                    # Login to npm
 npm whoami                   # Check login status
@@ -17,6 +18,7 @@ npm logout                   # Logout from npm
 ```
 
 ### Version Management
+
 ```bash
 npm version patch           # 1.0.0 → 1.0.1 (bug fixes)
 npm version minor           # 1.0.0 → 1.1.0 (new features)
@@ -24,6 +26,7 @@ npm version major           # 1.0.0 → 2.0.0 (breaking changes)
 ```
 
 ### Quality Checks
+
 ```bash
 npm run lint                # Check code quality
 npm run lint:fix            # Fix linting issues
@@ -33,6 +36,7 @@ npm test                    # Run tests
 ```
 
 ### Publishing
+
 ```bash
 npm publish                 # Publish to npm
 npm publish --dry-run       # Preview without publishing
@@ -40,6 +44,7 @@ npm pack                    # Create tarball locally
 ```
 
 ### Verification
+
 ```bash
 npm view @ashutoshdash/create-frontend-app    # View package info
 npm info @ashutoshdash/create-frontend-app    # Detailed package info
