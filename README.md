@@ -40,6 +40,7 @@ npm create frontend-app my-awesome-app
 ### Cross-Platform Usage
 
 **Windows (PowerShell/CMD)**
+
 ```bash
 # After global installation
 create-frontend-app my-project
@@ -49,6 +50,7 @@ npx @ashutoshdash/create-frontend-app my-project
 ```
 
 **macOS/Linux (Terminal)**
+
 ```bash
 # After global installation
 create-frontend-app my-project
@@ -356,6 +358,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Common Issues
 
 **"Command not found" on Windows**
+
 ```bash
 # Make sure npm global bin is in your PATH
 npm config get prefix
@@ -365,6 +368,7 @@ npx @ashutoshdash/create-frontend-app my-project
 ```
 
 **Permission denied on macOS/Linux**
+
 ```bash
 # Fix npm permissions
 sudo chown -R $(whoami) ~/.npm
@@ -373,6 +377,7 @@ npx @ashutoshdash/create-frontend-app my-project
 ```
 
 **Node.js version issues**
+
 ```bash
 # Check your Node.js version
 node --version
@@ -381,6 +386,7 @@ node --version
 ```
 
 **Package manager not found**
+
 ```bash
 # Make sure your chosen package manager is installed
 npm --version
@@ -393,6 +399,12 @@ pnpm --version  # if using pnpm
 - **Windows**: Use PowerShell or Command Prompt. Git Bash may have path issues.
 - **macOS**: May require `sudo` for global installation depending on Node.js setup.
 - **Linux**: Ensure you have build tools installed (`build-essential` on Ubuntu/Debian).
+
+## 📚 Documentation
+
+- **NPM Publishing Guide**: [docs/NPM_PUBLISHING_GUIDE.md](docs/NPM_PUBLISHING_GUIDE.md) - Complete step-by-step publishing workflow
+- **Quick Publish Cheatsheet**: [docs/QUICK_PUBLISH_CHEATSHEET.md](docs/QUICK_PUBLISH_CHEATSHEET.md) - Essential commands reference
+- **Changelog Guide**: [docs/CHANGELOG_GUIDE.md](docs/CHANGELOG_GUIDE.md) - Changelog management best practices
 
 ## 🆘 Support
 

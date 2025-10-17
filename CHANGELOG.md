@@ -8,35 +8,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Nothing yet
 
 ### Changed
+
 - Nothing yet
 
 ### Deprecated
+
 - Nothing yet
 
 ### Removed
+
 - Nothing yet
 
 ### Fixed
+
 - Nothing yet
 
 ### Security
+
 - Nothing yet
 
 ## [1.0.1] - 2024-01-15
 
 ### Fixed
+
 - Fixed minor issues in project generation
 - Enhanced error handling and user feedback
 
 ### Changed
+
 - Updated README with better examples and documentation
 
 ## [1.0.0] - 2024-01-01
 
 ### Added
+
 - Initial release of create-frontend-app CLI tool
 - Support for React and Next.js project generation
 - UI library options: Mantine and Tailwind CSS with Shadcn/UI
@@ -51,6 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Interactive CLI prompts for project configuration
 
 ### Security
+
 - Comprehensive input sanitization
 - Command injection prevention
 - Path traversal protection
