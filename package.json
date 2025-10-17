@@ -19,7 +19,14 @@
     "format:check": "npx prettier --check .",
     "build": "echo 'No build step required for CLI tool'",
     "prepublishOnly": "npm run lint && npm run format && npm test",
-    "postinstall": "echo 'Installation complete! Run create-frontend-app --help to get started.'"
+    "postinstall": "echo 'Installation complete! Run create-frontend-app --help to get started.'",
+    "version:patch": "npm version patch && npm run changelog:update",
+    "version:minor": "npm version minor && npm run changelog:update",
+    "version:major": "npm version major && npm run changelog:update",
+    "changelog:update": "echo 'Please update CHANGELOG.md with the new version details'",
+    "changelog:view": "cat CHANGELOG.md",
+    "changelog:add": "node scripts/changelog.js add",
+    "changelog:show": "node scripts/changelog.js show"
   },
   "keywords": [
     "cli",
