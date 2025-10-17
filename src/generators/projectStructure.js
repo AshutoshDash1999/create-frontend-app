@@ -195,12 +195,6 @@ root.render(<App />);`;
       return 'npm start';
     };
 
-    const getBuildCommand = () => {
-      if (techStack === TECH_STACKS.NEXTJS) return 'npm run build';
-      if (techStack === TECH_STACKS.REACT && buildTool === BUILD_TOOLS.VITE) return 'npm run build';
-      return 'npm run build';
-    };
-
     const getProjectStructure = () => {
       if (techStack === TECH_STACKS.NEXTJS) {
         return `src/

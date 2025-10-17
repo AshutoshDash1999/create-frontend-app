@@ -139,7 +139,7 @@ const createPrettierConfig = async projectPath => {
  */
 const createViteConfig = async (answers, projectPath) => {
   try {
-    const { techStack, buildTool, uiLibrary } = answers;
+    const { techStack, buildTool } = answers;
 
     if (techStack !== TECH_STACKS.REACT || buildTool !== BUILD_TOOLS.VITE) {
       return true; // Skip if not using Vite with React

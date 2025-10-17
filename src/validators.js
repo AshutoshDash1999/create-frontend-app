@@ -43,7 +43,7 @@ const validatePath = path => {
   ];
 
   // Extract just the filename for reserved name check
-  const pathParts = path.split(/[\\\/]/);
+  const pathParts = path.split(/[\\/]/);
   const filename = pathParts[pathParts.length - 1];
 
   // Check for dangerous patterns in the full path

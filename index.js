@@ -68,8 +68,45 @@ const main = async () => {
     const argv = parseArgs();
 
     // Display welcome message
-    console.log(chalk.yellow(figlet.textSync('Create Frontend App', { horizontalLayout: 'full' })));
-    console.log(chalk.blue("Welcome! Let's create your frontend project.\n"));
+    console.log(chalk.cyan('Welcome to Create Frontend App!'));
+    console.log('');
+
+    // Create ASCII art with gradient effect
+    const asciiArt = figlet.textSync('CREATE FRONTEND APP', {
+      horizontalLayout: 'full',
+      font: 'ANSI Shadow',
+    });
+
+    // Apply gradient colors to ASCII art
+    const lines = asciiArt.split('\n');
+    const coloredLines = lines.map((line, index) => {
+      if (line.trim() === '') return line;
+
+      // Create gradient effect
+      const colors = [chalk.blue, chalk.cyan, chalk.magenta, chalk.red, chalk.yellow];
+      const colorIndex = Math.floor((index / lines.length) * colors.length);
+      return colors[colorIndex](line);
+    });
+
+    console.log(coloredLines.join('\n'));
+    console.log('');
+
+    // Project information
+    console.log(
+      chalk.white.bold('A modern CLI tool for creating frontend projects with best practices')
+    );
+    console.log(chalk.gray('Version 2.0.0 • Built with Node.js and modern tooling'));
+    console.log('');
+
+    // Tips section
+    console.log(chalk.yellow.bold('Tips for getting started:'));
+    console.log(chalk.white('1. Choose your preferred tech stack and UI library'));
+    console.log(chalk.white('2. Select build tools and state management options'));
+    console.log(chalk.white('3. Use --next-mantine flag for quick Next.js + Mantine setup'));
+    console.log(chalk.white('4. Run --help for more command options'));
+    console.log('');
+
+    console.log(chalk.blue("Let's create your frontend project!\n"));
 
     let answers;
 

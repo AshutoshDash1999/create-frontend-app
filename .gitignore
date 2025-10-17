@@ -1,3 +1,5 @@
 # Coverage reports
 coverage/
 *.lcov
+
+node_modules
