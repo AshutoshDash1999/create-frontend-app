@@ -1,5 +1,4 @@
 const fs = require('fs').promises;
-const fsSync = require('fs');
 const path = require('path');
 const chalk = require('chalk').default || require('chalk');
 const { validatePath } = require('../validators');

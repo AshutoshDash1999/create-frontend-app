@@ -18,11 +18,13 @@ A powerful, secure, and modular CLI tool that generates modern frontend projects
 ### Installation
 
 **Global Installation (Recommended)**
+
 ```bash
 npm install -g create-frontend-app
 ```
 
 **One-time Usage**
+
 ```bash
 npx create-frontend-app my-awesome-app
 ```
@@ -44,28 +46,34 @@ create-frontend-app --help
 
 When you run the tool, you'll be guided through a series of prompts to configure your project:
 
-### 1. **Project Name** 
+### 1. **Project Name**
+
 - Enter a valid project name (letters, numbers, hyphens, underscores only)
 - The tool will create a directory with this name
 
 ### 2. **Tech Stack Selection**
+
 - **React**: Traditional SPA with Create React App setup
 - **Next.js**: Full-stack React framework with SSR/SSG capabilities
 
 ### 3. **UI Library Choice**
+
 - **Mantine**: Feature-rich React components library with built-in theming
 - **Tailwind CSS + Shadcn/UI**: Utility-first CSS with beautiful pre-built components
 
 ### 4. **State Management** (Optional)
+
 - **Zustand**: Lightweight, modern state management
 - **None**: Use React's built-in state management
 
 ### 5. **Package Manager**
+
 - **npm**: Default Node.js package manager
 - **yarn**: Fast, reliable, and secure package manager
 - **pnpm**: Efficient, disk space saving package manager
 
 ### 6. **Data Fetching** (Optional)
+
 - **React Query**: Powerful data synchronization for React
 - **Apollo Client**: Comprehensive GraphQL client
 - **None**: Use native fetch or other libraries
@@ -73,18 +81,21 @@ When you run the tool, you'll be guided through a series of prompts to configure
 ## 💡 Usage Examples
 
 ### Example 1: React + Tailwind + TypeScript
+
 ```bash
 create-frontend-app my-react-app
 # Choose: React → Tailwind CSS → None → npm → None
 ```
 
 ### Example 2: Next.js + Mantine + Full Stack
+
 ```bash
 create-frontend-app my-nextjs-app
 # Choose: Next.js → Mantine → Zustand → yarn → React Query
 ```
 
 ### Example 3: Minimal Setup
+
 ```bash
 create-frontend-app simple-app
 # Choose: React → Tailwind CSS → None → npm → None
@@ -95,6 +106,7 @@ create-frontend-app simple-app
 The tool creates a well-organized project structure tailored to your choices:
 
 ### React Project Structure
+
 ```
 my-project/
 ├── public/
@@ -121,6 +133,7 @@ my-project/
 ```
 
 ### Next.js Project Structure
+
 ```
 my-project/
 ├── public/
@@ -147,6 +160,7 @@ my-project/
 ## 📦 Included Dependencies
 
 ### Core Dependencies
+
 - **TypeScript**: Type-safe JavaScript development
 - **ESLint**: Code linting and quality assurance
 - **Prettier**: Code formatting
@@ -154,16 +168,19 @@ my-project/
 - **Zod**: Runtime type validation
 
 ### Framework Dependencies
+
 - **React**: UI library
 - **React DOM**: DOM rendering
 - **Next.js**: (if selected) Full-stack React framework
 
 ### UI Dependencies
+
 - **Mantine**: (if selected) Complete React components library
 - **Tailwind CSS**: (if selected) Utility-first CSS framework
 - **PostCSS**: (if using Tailwind) CSS processing
 
 ### Optional Dependencies
+
 - **Zustand**: (if selected) State management
 - **React Query**: (if selected) Data fetching and caching
 - **Apollo Client**: (if selected) GraphQL client
@@ -210,15 +227,15 @@ npm run format
 
 ### Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm start` | Run the CLI tool interactively |
-| `npm test` | Run the test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run lint` | Check code with ESLint |
-| `npm run lint:fix` | Fix ESLint issues automatically |
-| `npm run format` | Format code with Prettier |
-| `npm run format:check` | Check code formatting |
+| Script                 | Description                     |
+| ---------------------- | ------------------------------- |
+| `npm start`            | Run the CLI tool interactively  |
+| `npm test`             | Run the test suite              |
+| `npm run test:watch`   | Run tests in watch mode         |
+| `npm run lint`         | Check code with ESLint          |
+| `npm run lint:fix`     | Fix ESLint issues automatically |
+| `npm run format`       | Format code with Prettier       |
+| `npm run format:check` | Check code formatting           |
 
 ## 🏗️ Architecture
 
