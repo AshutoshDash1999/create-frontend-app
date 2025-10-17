@@ -3,6 +3,8 @@
 const { createPromptModule } = require('inquirer');
 const chalk = require('chalk').default || require('chalk');
 const figlet = require('figlet');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
 
 // Import our modular components
 const { questions } = require('./src/prompts/questions');
@@ -11,6 +13,49 @@ const { installDependencies } = require('./src/generators/dependencyInstaller');
 const { createConfigFiles } = require('./src/generators/configGenerator');
 const { setupProjectStructure } = require('./src/generators/projectStructure');
 const { cleanupFailedProject } = require('./src/cleanup');
+const { TECH_STACKS, UI_LIBRARIES, PACKAGE_MANAGERS } = require('./src/constants');
+
+/**
+ * Parse command line arguments
+ */
+const parseArgs = () => {
+  return yargs(hideBin(process.argv))
+    .option('next-mantine', {
+      type: 'boolean',
+      description: 'Create a Next.js project with Mantine UI library',
+      default: false,
+    })
+    .option('name', {
+      type: 'string',
+      description: 'Project name (required when using --next-mantine)',
+      default: '',
+    })
+    .option('package-manager', {
+      type: 'string',
+      description: 'Package manager to use (npm, yarn, pnpm)',
+      choices: ['npm', 'yarn', 'pnpm'],
+      default: 'npm',
+    })
+    .help()
+    .alias('help', 'h')
+    .version()
+    .alias('version', 'v').argv;
+};
+
+/**
+ * Create preset configuration for Next.js with Mantine
+ */
+const createNextMantinePreset = (projectName, packageManager) => {
+  return {
+    projectName,
+    techStack: TECH_STACKS.NEXTJS,
+    buildTool: null, // Next.js has its own build system
+    uiLibrary: UI_LIBRARIES.MANTINE,
+    stateManagement: 'None',
+    fetchingLibrary: 'None',
+    packageManager: packageManager || PACKAGE_MANAGERS.NPM,
+  };
+};
 
 /**
  * Main function that orchestrates the project creation process
@@ -19,14 +64,34 @@ const main = async () => {
   let projectPath = null;
 
   try {
+    // Parse command line arguments
+    const argv = parseArgs();
+
     // Display welcome message
     console.log(chalk.yellow(figlet.textSync('Create Frontend App', { horizontalLayout: 'full' })));
     console.log(chalk.blue("Welcome! Let's create your frontend project.\n"));
 
-    // Get user configuration
-    const prompt = createPromptModule();
-    const answers = await prompt(questions);
-    console.log(chalk.green('\nProject configuration:'), answers);
+    let answers;
+
+    // Check if --next-mantine flag is provided
+    if (argv['next-mantine']) {
+      if (!argv.name) {
+        console.error(chalk.red('Error: Project name is required when using --next-mantine flag'));
+        console.log(chalk.yellow('Usage: create-frontend-app --next-mantine --name my-project'));
+        process.exit(1);
+      }
+
+      // Use preset configuration for Next.js with Mantine
+      answers = createNextMantinePreset(argv.name, argv['package-manager']);
+      console.log(chalk.green('Using preset configuration for Next.js with Mantine'));
+      console.log(chalk.green('Project configuration:'), answers);
+    } else {
+      // Use interactive prompts
+      const prompt = createPromptModule();
+      answers = await prompt(questions);
+      console.log(chalk.green('\nProject configuration:'), answers);
+    }
+
     console.log(chalk.blue('\nStarting project creation...\n'));
 
     // Step 1: Create project directory and initialize

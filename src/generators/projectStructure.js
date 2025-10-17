@@ -62,7 +62,28 @@ npx eslint . --ext .js,.jsx,.ts,.tsx --fix`;
     if (techStack === TECH_STACKS.NEXTJS) {
       await createDirectory(`${srcPath}/pages`);
       indexPath = `${srcPath}/pages/index.js`;
-      indexContent = `export default function Home() {
+
+      if (uiLibrary === UI_LIBRARIES.MANTINE) {
+        indexContent = `import { MantineProvider, Container, Title, Text, Code } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
+
+export default function Home() {
+  return (
+    <MantineProvider>
+      <Notifications />
+      <Container size="md" py="xl">
+        <Title order={1} ta="center" mb="md">
+          Welcome to your Next.js + Mantine app!
+        </Title>
+        <Text ta="center" c="dimmed" size="lg">
+          Get started by editing <Code>src/pages/index.js</Code>
+        </Text>
+      </Container>
+    </MantineProvider>
+  );
+}`;
+      } else {
+        indexContent = `export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center">
@@ -74,6 +95,7 @@ npx eslint . --ext .js,.jsx,.ts,.tsx --fix`;
     </div>
   );
 }`;
+      }
     } else if (techStack === TECH_STACKS.REACT) {
       if (buildTool === BUILD_TOOLS.VITE) {
         // For Vite, create main.tsx and App.tsx

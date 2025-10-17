@@ -36,7 +36,7 @@ const DEPENDENCIES = {
   REACT: ['react', 'react-dom'],
   NEXTJS: ['next', 'react', 'react-dom'],
   VITE: ['vite', '@vitejs/plugin-react'],
-  MANTINE: ['@mantine/core', '@mantine/hooks'],
+  MANTINE: ['@mantine/core', '@mantine/hooks', '@mantine/notifications'],
   TAILWIND: ['tailwindcss', 'postcss', 'autoprefixer'],
   ZUSTAND: ['zustand'],
   REACT_QUERY: ['@tanstack/react-query'],
